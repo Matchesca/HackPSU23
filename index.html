@@ -8,5 +8,21 @@
 	<div class="container">
 		<h1 class="typewriter">BarTab</h1>
 	</div>
+	<div id="login-container">
+		<h2>Login</h2>
+		<form>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username">
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password">
+			<input type="submit" value="Login">
+		</form>
+	</div>
+
+	<script>
+		setTimeout(function() {
+			document.getElementById("login-container").classList.add("show-login");
+		}, 1500);
+	</script>
 </body>
 </html>
