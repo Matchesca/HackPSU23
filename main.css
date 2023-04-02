@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(3, 0, 28);
+    color: white;
+    font-family: "Fira Code", monospace;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding-left: 6%;
+    padding-right: 6%;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    cursor: pointer;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Fira Code;
+}
+
+.box {
+    flex-basis: 50%;
+    height: 700px;
+}
+
+.box-left {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    background-color: #eee;
+}
+
+.box-right {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #ccc;
+}
+
+.box-right a {
+    font-family: Fira Code, monospace;
+    font-size: 30px;
+}
+
+input.budgetInput{
+    height: 30px;
+    width: 100px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+}
+
+input.budgetInput:focus {
+    outline: none;
+}

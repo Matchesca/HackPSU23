@@ -27,7 +27,7 @@ function register() {
     email = document.getElementById('email');
     firstName = document.getElementById('fName');
     lastName = document.getElementById('lName');
-    password = document.getElementById('passwd');
+    password = document.getElementById('password');
 
     if (validateField(firstName) == false || validateField(lastName) == false ){
         alert("One or more field is wrong!")
