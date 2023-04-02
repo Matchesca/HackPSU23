@@ -126,6 +126,7 @@ nav ul li a:hover {
 	align-items: center;
 	display: none;
 	transition: height .2s ease;
+	overflow: hidden;
 }
 
 .wrapper.active {
@@ -169,14 +170,26 @@ nav ul li a:hover {
 
 
 
+
+
 .wrapper.active .form-box.register{
 	position: absolute;
+	top: 0;
+	transition: none;
 	transform: translateX(-400px);
+	
+
 }
 
 .wrapper .form-box.register{
 	position: absolute;
 	transform: translateX(400px);
+	transform: translateY(100000000px);
+}
+
+.wrapper.active .form-box.register{
+	transition: transform .18s ease;
+	transform: translateX(0);
 }
 
 
