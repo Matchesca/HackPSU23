@@ -114,8 +114,8 @@ nav ul li a:hover {
 	left: 35%;
 	width: 400px;
 	height: 440px;
-	background: rgba(25, 18, 92, 0.5);
-	border: 2px solid rgb(3, 0, 28, 0.1);
+	background: rgba(190, 189, 192, 0.0.7);
+	border: 2px solid rgba(175, 175, 178, 0.1);
 	border-radius: 20px;
 	backdrop-filter: blur(20px);
 	box-shadow: 0 0 30px rgb(0, 0, 0, 0.5);
@@ -128,6 +128,23 @@ nav ul li a:hover {
 .wrapper > .form-box > h2 {
 	text-align: center;
 	
+
+}
+
+.wrapper .close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 45px;
+	height: 45;
+	font-size: 2em;
+	color:whitesmoke;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom-left-radius: 20px;
+	cursor: pointer;
+	z-index: 1;
 
 }
 
@@ -147,8 +164,11 @@ nav ul li a:hover {
 	position: absolute;
 	top: -2%;
 	left: 0%;
-	
+	transform: translateY(-50%);
+	font-size: 1em;
+	font-weight: 500;
 	pointer-events: none;
+	transition: .5s;
 }
 
 .input-box input{
@@ -158,7 +178,16 @@ nav ul li a:hover {
 	border: none;
 	outline: none;
 	color: azure;
-	line-height: 57px;
+	line-height: 57px;font-size: 1em;
+	color: azure;
+	font-weight: 600;
+	padding: 0 35px 0 5px;
+
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+	top: -6px;
+
 }
 
 
@@ -168,6 +197,37 @@ nav ul li a:hover {
 	font-size: 1.2em;
 }
 
+.btn_login{
+	width: 100%;
+	height: 45px;
+	background: whitesmoke;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1em;
+	color: rgb(3, 0, 28);
+	font-weight: 500;
+}
+.register-link{
+	font-size: .9em;
+	color: whitesmoke;
+	text-align: center;
+	font-weight: 500;
+	margin: 25px 0 10px;
+
+}
+
+.register-link p a{
+	color: whitesmoke;
+
+	font-weight: 600;
+
+}
+
+.register-link p a:hover{
+	text-decoration: underline;
+}
 @keyframes cursor {
 	50% {border-color: transparent;}
 }
