@@ -109,9 +109,10 @@ nav ul li a:hover {
 	position: relative;
 	width: 400px;
 	height: 440px;
-	background: transparent;
+	background: rgba(25, 18, 92, 0.5);
 	border: 2px solid rgb(3, 0, 28, 0.1);
 	border-radius: 20px;
+	backdrop-filter: blur(20px);
 }
 
 
