@@ -4,6 +4,9 @@ body {
 	font-family: "Fira Code", monospace;
 }
 
+.parent {
+	position: relative;
+}
 
 .container {
 	width: 100%;
@@ -106,7 +109,9 @@ nav ul li a:hover {
 }
 
 .wrapper{
-	position: relative;
+	position: absolute;
+	top: 25%;
+	left: 35%;
 	width: 400px;
 	height: 440px;
 	background: rgba(25, 18, 92, 0.5);
@@ -117,12 +122,17 @@ nav ul li a:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
+	display: none;
 }
 
 .wrapper > .form-box > h2 {
 	text-align: center;
+	
 
+}
+
+.form-box {
+	padding: 20px;
 }
 
 .input-box{

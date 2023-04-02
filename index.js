@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth } from "firebase/auth";
-import { getDatabase } from "firebase/database";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -106,3 +106,13 @@ function validateField(field) {
         return true
     }
 }
+
+const toggleButton = document.getElementById('toggle');
+toggleButton.addEventListener('click', function() {
+  var overlay = document.getElementById("wrap");
+  if (overlay.style.display === "block") {
+        overlay.style.display = "none";
+      } else {
+        overlay.style.display = "block";
+      }
+});
