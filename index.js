@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -14,7 +14,8 @@ const firebaseConfig = {
   storageBucket: "bartab-7be79.appspot.com",
   messagingSenderId: "608866379265",
   appId: "1:608866379265:web:a688d7b6d4baabc36c8200",
-  measurementId: "G-76L09V8DKG"
+  measurementId: "G-76L09V8DKG",
+  databaseURL: "https://bartab-7be79-default-rtdb.firebaseio.com/"
 };
 
 // Initialize Firebase
@@ -24,24 +25,21 @@ const auth = getAuth(app);
 const database = getDatabase(app);
  
 function register() {
-    email = document.getElementById('email');
-    firstName = document.getElementById('fName');
-    lastName = document.getElementById('lName');
-    password = document.getElementById('password');
+    const email = document.getElementById('email2').value;
+    const firstName = document.getElementById('fName').value;
+    const lastName = document.getElementById('lName').value;
+    const password = document.getElementById('password2').value;
+
 
     if (validateField(firstName) == false || validateField(lastName) == false ){
         alert("One or more field is wrong!")
         return
     }
 
-    createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(auth, email, password)
 
-    .then(function() {
-
-        var user = auth.currentUser
-
-        var database_ref = database.ref()
-
+    .then((userCredential) => {
+        const user = userCredential.user;
         var user_data = {
             email : email,
             last_name : lastName,
@@ -49,8 +47,7 @@ function register() {
             last_login : Date.now()
         }
 
-        database_ref.child('users/' + user.uid).set(user_data)
-
+        set(ref(database, 'users/' + user.uid), user_data)
 
         alert("user created!")
 
@@ -121,4 +118,9 @@ toggleButton.addEventListener('click', function() {
 const loginButton = document.getElementById("lgn_btn")
 loginButton.addEventListener('click', function(){
     login();
+})
+
+const registerButton = document.getElementById("rgn_btn")
+registerButton.addEventListener('click', function(){
+    register();
 })
