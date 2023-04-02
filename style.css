@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	background-color: rgb(3, 0, 28);
 	color: white;
 	font-family: "Fira Code", monospace;
 }
@@ -106,7 +106,12 @@ nav ul li a:hover {
 }
 
 .wrapper{
-	
+	position: relative;
+	width: 400px;
+	height: 440px;
+	background: transparent;
+	border: 2px solid rgb(3, 0, 28, 0.1);
+	border-radius: 20px;
 }
 
 
