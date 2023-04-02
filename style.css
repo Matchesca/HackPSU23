@@ -215,6 +215,19 @@ nav ul li a:hover {
 	color: rgb(3, 0, 28);
 	font-weight: 500;
 }
+
+.btn_Register{
+	width: 100%;
+	height: 45px;
+	background: whitesmoke;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1em;
+	color: rgb(3, 0, 28);
+	font-weight: 500;
+}
 .register-link{
 	font-size: .9em;
 	color: whitesmoke;
