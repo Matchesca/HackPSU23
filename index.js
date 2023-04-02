@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -34,7 +34,7 @@ function register() {
         return
     }
 
-    auth.createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(email, password)
 
     .then(function() {
 
