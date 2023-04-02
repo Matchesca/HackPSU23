@@ -54,7 +54,8 @@ nav ul li {
 .box-right {
     padding-top: 40px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #ccc;
 }
 
@@ -74,4 +75,18 @@ input.budgetInput{
 
 input.budgetInput:focus {
     outline: none;
+}
+
+.top-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.table-money {
+    margin-top: 10px;
+}
+
+th {
+    padding: 50px;
 }
