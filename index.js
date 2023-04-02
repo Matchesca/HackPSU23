@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, set, update, push } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -65,15 +65,13 @@ function login() {
     
     .then((userCredential) => {
 
-        var user = auth.currentUser
-
-        var database_ref = database.ref()
+        const user = userCredential.user
 
         var user_data = {
             last_login : Date.now()
         }
 
-        database_ref.child('users/' + user.uid).set(user_data).update(user_data)
+        set(ref(database, 'users/' +user.uid))
 
 
         alert("user Logged In!")
