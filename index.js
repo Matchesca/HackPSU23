@@ -22,8 +22,87 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 const database = getDatabase(app);
-
+ 
 function register() {
-    email = document.getElementById('email')
+    email = document.getElementById('email');
+    firstName = document.getElementById('fName');
+    lastName = document.getElementById('lName');
+    password = document.getElementById('passwd');
+
+    if (validateField(firstName) == false || validateField(lastName) == false ){
+        alert("One or more field is wrong!")
+        return
+    }
+
+    auth.createUserWithEmailAndPassword(email, password)
+
+    .then(function() {
+
+        var user = auth.currentUser
+
+        var database_ref = database.ref()
+
+        var user_data = {
+            email : email,
+            last_name : lastName,
+            first_name : firstName,
+            last_login : Date.now()
+        }
+
+        database_ref.child('users/' + user.uid).set(user_data)
+
+
+        alert("user created!")
+
+    })
+    .catch(function(error) {
+        var error_code = error.code
+        var error_message = error.message
+    })
+}
+
+function login() {
+    email = document.getElementById('email');
+    password = document.getElementById('passwd');
+    auth.signInWithEmailAndPassword(email, password)
     
+    .then(function() {
+
+        var user = auth.currentUser
+
+        var database_ref = database.ref()
+
+        var user_data = {
+            last_login : Date.now()
+        }
+
+        database_ref.child('users/' + user.uid).set(user_data).update(user_data)
+
+
+        alert("user Logged In!")
+
+    })
+    .catch(function(error) {
+        var error_code = error.code
+        var error_message = error.message
+    })
+}
+
+function validatePassword(password) {
+    if (password < 6){
+        return false
+    } else {
+        return true
+    }
+}
+
+function validateField(field) {
+    if (field == null) {
+        return false
+    } 
+    if (field.length <= 0){
+        return false
+    } else {
+        return true
+    }
 }
