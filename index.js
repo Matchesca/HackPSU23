@@ -73,7 +73,6 @@ function login() {
         set(ref(database, 'users/' +user.uid), user_data)
 
 
-        alert("user Logged In!")
         window.location.href = "./main.html";
     })
     .catch(function(error) {
