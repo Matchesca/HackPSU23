@@ -117,7 +117,7 @@ nav ul li a:hover {
 	width: 400px;
 	height: 440px;
 	background: rgba(190, 189, 192, 0.0.7);
-	border: 2px solid rgba(175, 175, 178, 0.1);
+	border: 2px solid rgb(3, 0, 28, 0.7);
 	border-radius: 20px;
 	backdrop-filter: blur(20px);
 	box-shadow: 0 0 30px rgb(0, 0, 0, 0.5);
