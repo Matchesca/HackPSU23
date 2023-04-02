@@ -25,4 +25,5 @@ const database = getDatabase(app);
 
 function register() {
     email = document.getElementById('email')
+    
 }

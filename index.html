@@ -22,23 +22,23 @@
         <form action="#">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required>
+            <input id="email"  type="email" required placeholder="email">
             <label>Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="key"></ion-icon></span>
-            <input type="password" required>
+            <input id="passwd" type="password" required placeholder="password">
             <label>Password</label>
           </div>
           <div class="forget">
             <label><input type="checkbox">Remember me</label>
 
           </div>
-          <button type="submit" class="btn">Login
+          <button onclick="login()" type="submit" class="btn_login">Login
 
           </button>
           <div class="login_reg">
-            <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+            <p>Don't have an account?<a href="#">Register</a></p>
           </div>
         </form>
 
