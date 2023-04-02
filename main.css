@@ -85,7 +85,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
-    color: #1e272e;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     background-color:  rgb(3, 0, 28);
@@ -96,6 +96,42 @@ body {
     background-color: #fff;
     color: rgb(3, 0, 28);
     }
+
+    .drunk-heading {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .left-text {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #fff;
+        opacity: 0.8;
+    }
+
+    .box-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(3, 0, 28);
+        padding: 40px;
+        text-align: center;
+    }
+    
+    .box-left h2 {
+        margin-bottom: 20px;
+        font-size: 36px;
+    }
+    
+    .box-left p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    
     
     input.budgetInput{
     height: 50px;
@@ -103,7 +139,7 @@ body {
     background-color: transparent;
     border: none;
     font-size: 36px;
-    color: #fff;
+    color: rgb(3, 0, 28);
     text-align: center;
     }
     
@@ -135,4 +171,5 @@ body {
     td {
     padding: 10px;
     font-size: 20px;
+    color: rgb(3, 0, 28);
     }
