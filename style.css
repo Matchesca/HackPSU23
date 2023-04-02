@@ -105,6 +105,10 @@ nav ul li a:hover {
 
 }
 
+.wrapper{
+	
+}
+
 
 @keyframes cursor {
 	50% {border-color: transparent;}
