@@ -59,10 +59,9 @@ function register() {
 }
 
 function login() {
-    const email = document.getElementById('email');
-    const password = document.getElementById('passwd');
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('passwd').value;
     signInWithEmailAndPassword(auth, email, password)
-    
     .then((userCredential) => {
 
         const user = userCredential.user
@@ -71,10 +70,11 @@ function login() {
             last_login : Date.now()
         }
 
-        set(ref(database, 'users/' +user.uid))
+        set(ref(database, 'users/' +user.uid), user_data)
 
 
         alert("user Logged In!")
+        window.location.href = "./main.html";
 
     })
     .catch(function(error) {
@@ -122,3 +122,4 @@ const registerButton = document.getElementById("rgn_btn")
 registerButton.addEventListener('click', function(){
     register();
 })
+
