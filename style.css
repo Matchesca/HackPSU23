@@ -150,6 +150,10 @@ nav ul li a:hover {
 
 }
 
+.wrapper .form-box.Login{
+	display: none;
+}
+
 .form-box {
 	padding: 20px;
 }
@@ -242,7 +246,7 @@ h1 span {
 	display: inline-block;
 	animation: typing 2s steps(7, end) infinite;
 	white-space: nowrap;
-	overflow: hidden;
+	
 	width: 0;
 }
 
