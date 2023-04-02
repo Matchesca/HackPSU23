@@ -85,6 +85,7 @@ nav ul li a:hover {
 	color: #fff;
 	font-weight: 500;
 	margin-left: 40px;
+	font-family: Fira Code;
 
 }
 
@@ -97,16 +98,17 @@ nav ul li a:hover {
 	height: 3px;
 	background: #fff;
 	border-radius: 5px;
-	transform-origin: right;
+	transform-origin: center;
 	transform: scaleX(0);
 	transition: .5s;
 }
 
 .btnlogin:hover::after{
-	transform-origin: left;
+	transform-origin: center;
 	transform: scaleX(1);
 
 }
+
 
 .wrapper{
 	position: absolute;

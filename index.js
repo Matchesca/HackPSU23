@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -62,11 +62,11 @@ function register() {
 }
 
 function login() {
-    email = document.getElementById('email');
-    password = document.getElementById('passwd');
-    auth.signInWithEmailAndPassword(email, password)
+    const email = document.getElementById('email');
+    const password = document.getElementById('passwd');
+    signInWithEmailAndPassword(auth, email, password)
     
-    .then(function() {
+    .then((userCredential) => {
 
         var user = auth.currentUser
 
@@ -85,6 +85,7 @@ function login() {
     .catch(function(error) {
         var error_code = error.code
         var error_message = error.message
+        alert("does not exist")
     })
 }
 
@@ -116,3 +117,8 @@ toggleButton.addEventListener('click', function() {
         overlay.style.display = "block";
       }
 });
+
+const loginButton = document.getElementById("lgn_btn")
+loginButton.addEventListener('click', function(){
+    login();
+})
