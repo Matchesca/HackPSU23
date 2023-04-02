@@ -75,7 +75,6 @@ function login() {
 
         alert("user Logged In!")
         window.location.href = "./main.html";
-
     })
     .catch(function(error) {
         var error_code = error.code
