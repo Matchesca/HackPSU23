@@ -69,7 +69,7 @@ nav ul li a:hover {
 	border-right: 5px solid;
 	white-space: nowrap;
 	overflow: hidden;
-	animation: typing 2s ,
+	animation: typing 2s steps(12),
 				cursor .4s step-end infinite alternate;
 }
 
@@ -116,7 +116,7 @@ nav ul li a:hover {
 	left: 35%;
 	width: 400px;
 	height: 440px;
-	background: rgba(190, 189, 192, 0.0.7);
+	background: rgba(91, 143, 185, 0.0.7);
 	border: 2px solid rgb(3, 0, 28, 0.7);
 	border-radius: 20px;
 	backdrop-filter: blur(20px);
